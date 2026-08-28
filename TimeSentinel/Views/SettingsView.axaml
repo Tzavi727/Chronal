@@ -1,0 +1,103 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:local="using:TimeSentinel.Views"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:viewmodels="using:TimeSentinel.ViewModels"
+			 mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="450"
+			 Background="{DynamicResource WindowBgBrush}"
+			 Width="500"
+			 Height="450"
+			 x:Class="TimeSentinel.Views.SettingsView"
+			 x:DataType="viewmodels:SettingsViewModel">
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+
+		<ListBox Grid.Row="0"
+				 Margin="10"
+				 BorderBrush="{DynamicResource BorderMainBrush}"
+				 BorderThickness="1"
+				 Background="{DynamicResource WindowBgBrush}">
+
+		</ListBox>
+		<TextBlock Grid.Row="0"
+				   Text="Registered Processes"
+				   FontWeight="SemiBold"
+				   FontSize="12"
+				   Background="{DynamicResource WindowBgBrush}"
+				   HorizontalAlignment="Left"
+				   VerticalAlignment="Top"
+				   Margin="18,3,0,0"/>
+
+
+		<Border Grid.Row="2"
+				Margin="10"
+				Padding="15"
+				BorderThickness="1"
+				BorderBrush="{DynamicResource BorderMainBrush}">
+
+			<StackPanel Spacing="10">
+				<Grid ColumnDefinitions="*,auto,*">
+					<Grid Grid.Column="0">
+						<TextBox Grid.Column="0"
+								 PlaceholderText="Process Name."
+								 Margin="5"
+								 HorizontalAlignment="Stretch">
+						</TextBox>
+					</Grid>
+					<Rectangle Grid.Column="1"
+							   Width="1"
+							   Fill="{DynamicResource BorderMainBrush}"
+							   HorizontalAlignment="Center"
+							   VerticalAlignment="Stretch"
+							   Margin="15, -15">
+					</Rectangle>
+					<TextBox Grid.Column="2"
+							 PlaceholderText="Process to Delete."
+							 Margin="5"
+							 HorizontalAlignment="Stretch">
+					</TextBox>
+				</Grid>
+				<Grid ColumnDefinitions="*,auto,*">
+					<Button Grid.Column="0"
+							Content="Register Process"
+							FontSize="15"
+							Height="50"
+							HorizontalAlignment="Stretch"
+							VerticalAlignment="Stretch"
+							Margin="5">
+					</Button>
+					<Rectangle Grid.Column="1"
+							   Width="1"
+							   Fill="{DynamicResource BorderMainBrush}"
+							   HorizontalAlignment="Center"
+							   VerticalAlignment="Stretch"
+							   Margin="15,-15">
+					</Rectangle>
+					<Button Grid.Column="2"
+							Content="Remove Process"
+							FontSize="15"
+							Height="50"
+							HorizontalAlignment="Stretch"
+							VerticalAlignment="Stretch"
+							Margin="5">
+					</Button>
+				</Grid>
+			</StackPanel>
+		</Border>
+		<TextBlock Grid.Row="2"
+				   Text="Process Management"
+				   FontWeight="SemiBold"
+				   FontSize="12"
+				   Background="{DynamicResource WindowBgBrush}"
+				   Margin="20, 3, 0, 0"
+				   HorizontalAlignment="Left"
+				   VerticalAlignment="Top"/>
+	</Grid>
+</UserControl>

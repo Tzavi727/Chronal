@@ -1,0 +1,36 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:TimeSentinel.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="using:TimeSentinel.Views"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="450"
+        Width="500"
+        Height="450"
+        WindowStartupLocation="CenterOwner"
+        CanResize="False"
+        Background="{DynamicResource WindowBgBrush}"
+        x:Class="TimeSentinel.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="TimeSentinel">
+
+    <Grid RowDefinitions="*,Auto">
+        <Border  Grid.Row="0"
+                 Background="{DynamicResource MenuBgBrush}"
+                 Height="30.5"
+                 VerticalAlignment="Top"
+                 BorderBrush="{DynamicResource BorderMainBrush}"
+                 BorderThickness="0,0,0,1"/>
+
+        <TabControl Grid.Row="1">
+            <TabItem Header="Home"
+                     FontSize="12">
+                <local:HomeView x:Name="HomeViewControl" Padding="0,0,0,40"/>
+            </TabItem>
+            <TabItem Header="Settings" FontSize="12">
+                <local:SettingsView x:Name="SettingsViewControl" Padding="0,0,0,40"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
