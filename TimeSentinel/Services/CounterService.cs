@@ -48,8 +48,8 @@ namespace TimeSentinel.Services
                         process.SessionTime++;
                     }
                 }
-                Tick?.Invoke();
             }
+            Tick?.Invoke();
         }
         public string FormatTime(int seconds)
         {
