@@ -26,10 +26,10 @@
         <TabControl Grid.Row="1">
             <TabItem Header="Home"
                      FontSize="12">
-                <local:HomeView x:Name="HomeViewControl" Padding="0,0,0,40"/>
+                <local:HomeView x:Name="HomeViewControl" DataContext="{Binding Home}" Padding="0,0,0,40"/>
             </TabItem>
             <TabItem Header="Settings" FontSize="12">
-                <local:SettingsView x:Name="SettingsViewControl" Padding="0,0,0,40"/>
+                <local:SettingsView x:Name="SettingsViewControl" DataContext="{Binding Settings}" Padding="0,0,0,40"/>
             </TabItem>
         </TabControl>
     </Grid>

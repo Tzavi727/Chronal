@@ -21,7 +21,12 @@
                 Padding="15"
                 BorderThickness="1"
                 BorderBrush="{DynamicResource BorderMainBrush}">
-            <ComboBox x:Name="ProcessComboBox">
+            <ComboBox ItemsSource="{Binding ProcessList}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding ProcessName}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
             </ComboBox>
         </Border>
         <TextBlock Grid.Row="0"

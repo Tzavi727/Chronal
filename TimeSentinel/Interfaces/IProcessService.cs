@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TimeSentinel.Interfaces
 {
-    internal interface IProcessService
+    public interface IProcessService
     {
         bool IsRunning(string processName);
     }

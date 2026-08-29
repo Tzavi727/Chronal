@@ -10,13 +10,15 @@ namespace TimeSentinel.Data
 {
     internal class DataBaseBootstrap
     {
-        private const string ConnectionString = "Data Source=Timer.db";
-
+        private const string ConnectionString = "Data Source=TimerData.db";
+        
         public void Setup()
         {
+            SQLitePCL.Batteries.Init();
             using var connection = new SqliteConnection(ConnectionString);
             string sql = @"CREATE TABLE IF NOT EXISTS ProcessTable(
                           processId INTEGER PRIMARY KEY AUTOINCREMENT,
+                          isActive INTEGER,
                           processName TEXT,
                           processTotalTime INTEGER);";
             connection.Execute(sql);

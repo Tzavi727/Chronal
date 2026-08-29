@@ -18,9 +18,9 @@ namespace TimeSentinel.Services
         {
             return Elapsed.ToString(@"hh\:mm\:ss");
         }
-        public string FormattTime(int totalTime)
+        public string FormatTime(int totalTime)
         {
-            return Elapsed.ToString($@"{TimeSpan.FromSeconds(totalTime):hh\:mm\:ss}");
+            return TimeSpan.FromSeconds(totalTime).ToString(@"hh\:mm\:ss");
         }
         public int GetTimeRan()
         {

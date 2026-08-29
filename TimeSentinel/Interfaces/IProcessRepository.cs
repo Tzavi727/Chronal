@@ -7,11 +7,12 @@ using TimeSentinel.Models;
 
 namespace TimeSentinel.Interfaces
 {
-    internal interface IProcessRepository
+    public interface IProcessRepository
     {
-        void AddProcess(ProcessRecord process);
-        void RemoveProcess(int itemId);
+        void AddProcess(TrackedProcess process);
+        void RemoveProcess(int processId);
+        IEnumerable<TrackedProcess> GetAll();
         void UpdateProcessTime(string name, int newTotalTime);
-        ProcessRecord GetProcessByName(string name);
+        TrackedProcess GetProcessByName(string name);
     }
 }

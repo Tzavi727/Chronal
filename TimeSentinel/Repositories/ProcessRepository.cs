@@ -19,7 +19,7 @@ namespace TimeSentinel.Repositories
             _connectionString = connectionString;
         }
 
-        public void AddProcess(ProcessRecord process)
+        public void AddProcess(TrackedProcess process)
         {
             using var connection = new SqliteConnection(_connectionString);
 
@@ -27,26 +27,30 @@ namespace TimeSentinel.Repositories
                            VALUES (@ProcessName, @ProcessTotalTime)";
             connection.Execute(sql, process);
         }
-        public void RemoveProcess(int ProcessId)
+        public void RemoveProcess(int processId)
         {
             using var connection = new SqliteConnection(_connectionString);
             string sql = "DELETE FROM ProcessTable WHERE processId = @ProcessId";
-            connection.Execute(sql, new { processId = ProcessId});
+            connection.Execute(sql, new { ProcessId = processId});
+        }
+        public IEnumerable<TrackedProcess> GetAll()
+        {
+            using var connection = new SqliteConnection(_connectionString);
+            var sql = "SELECT * FROM ProcessTable";
+            return connection.Query<TrackedProcess>(sql);
         }
         public void UpdateProcessTime(string processName, int newTotalTime)
         {
             using var connection = new SqliteConnection(_connectionString);
             var sql = "UPDATE ProcessTable SET processTotalTime = @NewTime WHERE processName = @ProcessName";
-            connection.Execute(sql, new { NewTime = newTotalTime, Name = processName });
+            connection.Execute(sql, new { NewTime = newTotalTime, ProcessName = processName });
         }
-        public ProcessRecord GetProcessByName(string name)
+        public TrackedProcess? GetProcessByName(string name)
         {
             using var connection = new SqliteConnection(_connectionString);
 
-#pragma warning disable CS8603 // Possible null reference return.
-            return connection.QueryFirstOrDefault<ProcessRecord>(
+            return connection.QueryFirstOrDefault<TrackedProcess>(
                 "SELECT * FROM ProcessTable WHERE processName = @Name", new { Name = name });
-#pragma warning restore CS8603 // Possible null reference return.
         } 
     }
 }
