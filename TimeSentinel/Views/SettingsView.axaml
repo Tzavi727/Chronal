@@ -30,10 +30,10 @@
 				<DataTemplate>
 					<Grid ColumnDefinitions="Auto, *, *">
 					<CheckBox Grid.Column="0"
-							  IsChecked="{Binding IsActive}"
+							  IsChecked="{Binding IsCounterActive}"
 							  Margin="0,0,10,0"/>
 						<TextBlock Grid.Column="1" Text="{Binding ProcessName}" HorizontalAlignment="Left"/>
-						<TextBlock Grid.Column="2" Text="{Binding ProcessTotalTime}" HorizontalAlignment="Right"/>
+						<TextBlock Grid.Column="2" Text="{Binding FormattedTime}" HorizontalAlignment="Right"/>
 					</Grid>
 				</DataTemplate>
 			</ListBox.ItemTemplate>

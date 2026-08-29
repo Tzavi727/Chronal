@@ -1,8 +1,10 @@
 ﻿using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using System;
 using TimeSentinel.Data;
 using TimeSentinel.Repositories;
+using TimeSentinel.Services;
 using TimeSentinel.ViewModels;
 using TimeSentinel.Views;
 
@@ -22,13 +24,16 @@ public partial class App : Application
             string dbPath = "Data Source=TimerData.db";
             DataBaseBootstrap dataBase = new();
             dataBase.Setup();
-            ProcessRepository repository = new ProcessRepository(dbPath);
+            ProcessService processService = new();
+            ProcessRepository repository = new(dbPath);
+            CounterService counterService = new(repository,processService);
+            var mainVM = new MainViewModel(repository, counterService);
             desktop.MainWindow = new MainWindow
             {
-                DataContext = new MainViewModel(repository),
+                DataContext = mainVM,
             };
+            counterService.SetupTimer(mainVM.SharedProcesses);
         }
-
         base.OnFrameworkInitializationCompleted();
     }
 }

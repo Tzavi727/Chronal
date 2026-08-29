@@ -21,7 +21,8 @@
                 Padding="15"
                 BorderThickness="1"
                 BorderBrush="{DynamicResource BorderMainBrush}">
-            <ComboBox ItemsSource="{Binding ProcessList}">
+            <ComboBox ItemsSource="{Binding ProcessList}"
+                      SelectedItem="{Binding SelectedProcess}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding ProcessName}"/>
@@ -56,15 +57,15 @@
 
                 <StackPanel Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Text="LIFETIME_UPTIME:" FontSize="16"/>
-                    <TextBlock Text="3840h" FontSize="16" HorizontalAlignment="Center" />
+                    <TextBlock Text="{Binding DisplayLifeTime}" FontSize="16" HorizontalAlignment="Center" />
                 </StackPanel>
                 <StackPanel Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="CURRENT_SESSION" FontSize="16"/>
-                    <TextBlock Text="02:15:42" FontSize="16" HorizontalAlignment="Center"/>
+                    <TextBlock Text="CURRENT_SESSION:" FontSize="16"/>
+                    <TextBlock Text="{Binding DisplaySession}" FontSize="16" HorizontalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="PROCESS_STATUS" FontSize="16"/>
-                    <TextBlock Text="[ ACTIVE ]" FontSize="16" HorizontalAlignment="Center"/>
+                    <TextBlock Text="PROCESS_STATUS:" FontSize="16"/>
+                    <TextBlock Text="{Binding DisplayStatus}"  FontSize="16" HorizontalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Text="PLACEHOLDER" FontSize="16"/>

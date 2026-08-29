@@ -31,7 +31,7 @@ namespace TimeSentinel.Repositories
         {
             using var connection = new SqliteConnection(_connectionString);
             string sql = "DELETE FROM ProcessTable WHERE processId = @ProcessId";
-            connection.Execute(sql, new { ProcessId = processId});
+            connection.Execute(sql, new { ProcessId = processId });
         }
         public IEnumerable<TrackedProcess> GetAll()
         {
@@ -39,11 +39,12 @@ namespace TimeSentinel.Repositories
             var sql = "SELECT * FROM ProcessTable";
             return connection.Query<TrackedProcess>(sql);
         }
-        public void UpdateProcessTime(string processName, int newTotalTime)
+        public void UpdateProcessTime(string processName, int newTotalTime, bool isActive)
         {
             using var connection = new SqliteConnection(_connectionString);
-            var sql = "UPDATE ProcessTable SET processTotalTime = @NewTime WHERE processName = @ProcessName";
-            connection.Execute(sql, new { NewTime = newTotalTime, ProcessName = processName });
+            string sql = @"UPDATE ProcessTable SET processTotalTime = @newTotalTime, isCounterActive = @isActive WHERE processName = @processName";
+
+            connection.Execute(sql, new { newTotalTime, isActive, processName });
         }
         public TrackedProcess? GetProcessByName(string name)
         {
@@ -51,6 +52,6 @@ namespace TimeSentinel.Repositories
 
             return connection.QueryFirstOrDefault<TrackedProcess>(
                 "SELECT * FROM ProcessTable WHERE processName = @Name", new { Name = name });
-        } 
+        }
     }
 }

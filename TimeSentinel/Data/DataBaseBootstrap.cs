@@ -18,7 +18,7 @@ namespace TimeSentinel.Data
             using var connection = new SqliteConnection(ConnectionString);
             string sql = @"CREATE TABLE IF NOT EXISTS ProcessTable(
                           processId INTEGER PRIMARY KEY AUTOINCREMENT,
-                          isActive INTEGER,
+                          isCounterActive INTEGER DEFAULT 0,
                           processName TEXT,
                           processTotalTime INTEGER);";
             connection.Execute(sql);
