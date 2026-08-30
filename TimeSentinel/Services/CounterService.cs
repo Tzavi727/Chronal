@@ -10,7 +10,7 @@ namespace TimeSentinel.Services
     {
         private readonly IProcessRepository _processRepository;
         private readonly IProcessService _processService;
-        private DispatcherTimer _timer;
+        private DispatcherTimer? _timer;
         public event Action? Tick;
         public CounterService(IProcessRepository repository, IProcessService processService)
         {
