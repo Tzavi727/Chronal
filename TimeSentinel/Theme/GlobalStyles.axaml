@@ -71,16 +71,10 @@
 		<Setter Property="CaretBrush" Value="{DynamicResource CaretBrush}"/>
 	</Style>
 
-	<Style Selector="TextBox:pointerover /template/ Border">
+	<Style Selector="TextBox:focus /template/ Border,
+					 TextBox.HasText /template/ Border,
+					 TextBox:pointerover /template/ Border">
 		<Setter Property="BorderBrush" Value="{DynamicResource BorderMainBrush}"/>
-	</Style>
-
-	<Style Selector="TextBox:focus /template/ Border">
-		<Setter Property="BorderBrush" Value="{DynamicResource BorderMainBrush}"/>
-		<Setter Property="Opacity" Value="1"/>
-	</Style>
-
-	<Style Selector="TextBox.HasText /template/ Border">
 		<Setter Property="Opacity" Value="1"/>
 	</Style>
 
@@ -164,13 +158,21 @@
 
 	<Style Selector="CheckBox">
 		<Setter Property="Foreground" Value="{DynamicResource TextMainBrush}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource BorderMainBrush}"/>
 		<Setter Property="Padding" Value="8,0,0,0"/>
+		<Setter Property="Opacity" Value="0.5"/>
 	</Style>
 
-	<Style Selector="CheckBox /template/ Border#NormalRectangle">
+	<Style Selector="CheckBox:pointerover">
+		<Setter Property="Opacity" Value="1"/>
+	</Style>
+
+	<Style Selector="CheckBox:checked">
+		<Setter Property="Opacity" Value="1"/>
+	</Style>
+
+	<Style Selector="CheckBox:pointerover /template/ Border#border">
 		<Setter Property="BorderBrush" Value="{DynamicResource BorderMainBrush}"/>
-		<Setter Property="Background" Value="{DynamicResource InputBgBrush}"/>
-		<Setter Property="BorderThickness" Value="1"/>
 	</Style>
 
 </Styles>

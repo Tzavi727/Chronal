@@ -15,6 +15,7 @@ public partial class TrackedProcess : ObservableObject
     [ObservableProperty]
     private bool _isCounterActive; 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(FormattedTime))]
     private int _processTotalTime;
     [ObservableProperty]
     private int _sessionTime = 0;

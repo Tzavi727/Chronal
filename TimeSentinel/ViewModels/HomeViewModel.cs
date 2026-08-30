@@ -14,6 +14,7 @@ namespace TimeSentinel.ViewModels;
 public partial class HomeViewModel : ViewModelBase
 {
     private readonly CounterService _counterService;
+
     public HomeViewModel(ObservableCollection<TrackedProcess> sharedList, CounterService counterService)
     {
         _processList = sharedList;
@@ -31,8 +32,10 @@ public partial class HomeViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(DisplayLifeTime))]
     [NotifyPropertyChangedFor(nameof(DisplaySession))]
     [NotifyPropertyChangedFor(nameof(DisplayStatus))]
+    [NotifyPropertyChangedFor(nameof(DetailsOpacity))]
     private TrackedProcess? _selectedProcess;
 
+    public double DetailsOpacity => SelectedProcess == null ? 0.5 : 1.0;
     public string DisplayLifeTime => SelectedProcess == null ? "00:00:00" : _counterService.FormatTime(SelectedProcess.ProcessTotalTime);
     public string DisplaySession => SelectedProcess == null ? "00:00:00" : _counterService.FormatTime(SelectedProcess.SessionTime);
     public string DisplayStatus => SelectedProcess == null ? "NOT SELECTED" : SelectedProcess.IsCurrentlyRunning ? "[ ACTIVE ]" : "[ INACTIVE ]";

@@ -17,7 +17,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceInclude Source="avares://TimeSentinel/Theme/Light.axaml"/>
+                <ResourceInclude Source="avares://TimeSentinel/Theme/ChargedOG.axaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -23,17 +23,20 @@ public partial class SettingsViewModel : ViewModelBase
 
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(AddProcessCommand))]
+    [NotifyPropertyChangedFor(nameof(HasProcessNameToAdd))]
     private string? _processNameToAdd;
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(RemoveProcessCommand))]
+    [NotifyPropertyChangedFor(nameof(HasProcessNameToRemove))]
     private string? _processNameToRemove;
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(RemoveProcessCommand))]
     private TrackedProcess? _selectedProcess;
     [ObservableProperty]
     ObservableCollection<TrackedProcess> _registeredProcesses = new();
-
-    private bool CanAdd => ProcessNameToAdd != null;
+    public bool HasProcessNameToAdd => !string.IsNullOrWhiteSpace(ProcessNameToAdd);
+    public bool HasProcessNameToRemove => !string.IsNullOrWhiteSpace(ProcessNameToAdd);
+    private bool CanAdd => !string.IsNullOrWhiteSpace(ProcessNameToAdd);
     private bool CanRemove => SelectedProcess != null || !string.IsNullOrWhiteSpace(ProcessNameToRemove);
 
     [RelayCommand(CanExecute = nameof(CanAdd))]

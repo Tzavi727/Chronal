@@ -62,7 +62,8 @@
 								 PlaceholderText="Process Name."
 								 Text="{Binding ProcessNameToAdd}"
 								 Margin="5"
-								 HorizontalAlignment="Stretch">
+								 HorizontalAlignment="Stretch"
+								 Classes.HasText="{Binding HasProcessNameToAdd}">
 						</TextBox>
 					</Grid>
 					<Rectangle Grid.Column="1"
@@ -76,7 +77,8 @@
 							 PlaceholderText="Process to Delete."
 							 Text="{Binding ProcessNameToRemove}"
 							 Margin="5"
-							 HorizontalAlignment="Stretch">
+							 HorizontalAlignment="Stretch"
+							 Classes.HasText="{Binding HasProcessNameToRemove}">
 					</TextBox>
 				</Grid>
 				<Grid ColumnDefinitions="*,auto,*">
