@@ -1,6 +1,8 @@
 ﻿using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using System;
 using TimeSentinel.Data;
 using TimeSentinel.Repositories;
 using TimeSentinel.Services;
@@ -34,5 +36,18 @@ public partial class App : Application
             counterService.SetupTimer(mainVM.SharedProcesses);
         }
         base.OnFrameworkInitializationCompleted();
+    }
+    private void TrayIcon_OnClicked(object? sender, EventArgs e)
+    {
+        if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+        {
+            var window = desktop.MainWindow;
+            if (window != null)
+            {
+                window.Show();
+                window.WindowState = WindowState.Normal;
+                window.Activate();
+            }
+        }
     }
 }

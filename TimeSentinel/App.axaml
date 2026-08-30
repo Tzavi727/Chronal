@@ -4,7 +4,14 @@
              xmlns:local="using:TimeSentinel"
              RequestedThemeVariant="Light">
     <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
-
+    <TrayIcon.Icons>
+        <TrayIcons>
+            <TrayIcon Icon="/Assets/Gold_Watch.ico"
+                      ToolTipText="TimeSentinel: Watching Processes"
+                      Clicked="TrayIcon_OnClicked">
+            </TrayIcon>
+        </TrayIcons>
+    </TrayIcon.Icons>
     <Application.DataTemplates>
         <local:ViewLocator />
     </Application.DataTemplates>
