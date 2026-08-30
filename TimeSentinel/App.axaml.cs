@@ -1,7 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using System;
 using TimeSentinel.Data;
 using TimeSentinel.Repositories;
 using TimeSentinel.Services;

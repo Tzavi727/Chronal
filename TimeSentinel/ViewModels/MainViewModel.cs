@@ -1,9 +1,6 @@
-﻿using Avalonia.Controls.ApplicationLifetimes;
-using CommunityToolkit.Mvvm.ComponentModel;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using TimeSentinel.Interfaces;
 using TimeSentinel.Models;
-using TimeSentinel.Repositories;
 using TimeSentinel.Services;
 
 namespace TimeSentinel.ViewModels;

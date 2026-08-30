@@ -2,10 +2,6 @@
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TimeSentinel.Data;
 using TimeSentinel.Interfaces;
 using TimeSentinel.Models;
 
