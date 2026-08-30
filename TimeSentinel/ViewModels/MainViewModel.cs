@@ -35,6 +35,7 @@ public partial class MainViewModel : ViewModelBase
             if (p.ProcessTotalTime > 0)
             {
                 _processRepository.UpdateProcessTime(p.ProcessName, p.ProcessTotalTime, p.IsCounterActive);
+                _processRepository.UpdateLastRunTime(p.ProcessName, p.LastRunTime);
             }
         }
     }

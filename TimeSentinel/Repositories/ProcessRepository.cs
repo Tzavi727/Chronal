@@ -46,6 +46,13 @@ namespace TimeSentinel.Repositories
 
             connection.Execute(sql, new { newTotalTime, isActive, processName });
         }
+        public void UpdateLastRunTime(string processName,DateTime? dateTime)
+        {
+            using var connection = new SqliteConnection(_connectionString);
+            string sql = @"Update ProcessTable SET lastRunTime = @dateTime Where processName = @processName";
+
+            connection.Execute(sql, new { processName, dateTime });
+        }
         public TrackedProcess? GetProcessByName(string name)
         {
             using var connection = new SqliteConnection(_connectionString);

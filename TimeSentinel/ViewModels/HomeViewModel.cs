@@ -24,6 +24,7 @@ public partial class HomeViewModel : ViewModelBase
             OnPropertyChanged(nameof(DisplayLifeTime));
             OnPropertyChanged(nameof(DisplaySession));
             OnPropertyChanged(nameof(DisplayStatus));
+            OnPropertyChanged(nameof(DisplayLastSession));
         };
     }
     [ObservableProperty]
@@ -33,14 +34,14 @@ public partial class HomeViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(DisplaySession))]
     [NotifyPropertyChangedFor(nameof(DisplayStatus))]
     [NotifyPropertyChangedFor(nameof(DetailsOpacity))]
+    [NotifyPropertyChangedFor(nameof(DisplayLastSession))]
     private TrackedProcess? _selectedProcess;
 
     public double DetailsOpacity => SelectedProcess == null ? 0.5 : 1.0;
     public string DisplayLifeTime => SelectedProcess == null ? "00:00:00" : _counterService.FormatTime(SelectedProcess.ProcessTotalTime);
     public string DisplaySession => SelectedProcess == null ? "00:00:00" : _counterService.FormatTime(SelectedProcess.SessionTime);
     public string DisplayStatus => SelectedProcess == null ? "NOT SELECTED" : SelectedProcess.IsCurrentlyRunning ? "[ ACTIVE ]" : "[ INACTIVE ]";
-
-
+    public string DisplayLastSession => SelectedProcess == null ? "NOT SELECTED" : SelectedProcess.LastRunDisplay;
 }
 
 

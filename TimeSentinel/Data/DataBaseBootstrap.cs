@@ -20,7 +20,8 @@ namespace TimeSentinel.Data
                           processId INTEGER PRIMARY KEY AUTOINCREMENT,
                           isCounterActive INTEGER DEFAULT 0,
                           processName TEXT,
-                          processTotalTime INTEGER);";
+                          processTotalTime INTEGER,
+                          lastRunTime TEXT);";
             connection.Execute(sql);
         }
     }

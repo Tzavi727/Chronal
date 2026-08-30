@@ -37,16 +37,21 @@ namespace TimeSentinel.Services
         {
             foreach (var process in processes)
             {
+                bool wasRunning = process.IsCurrentlyRunning;
                 bool runningNow = _processService.IsRunning(process.ProcessName);
+                if (wasRunning && !runningNow)
+                {
+                    process.LastRunTime = DateTime.Now;
+                }
+                if (!wasRunning && runningNow)
+                {
+                    process.SessionTime = 0;
+                }
                 process.IsCurrentlyRunning = runningNow;
-
                 if (process.IsCounterActive && runningNow)
                 {
-                    if (_processService.IsRunning(process.ProcessName))
-                    {
-                        process.ProcessTotalTime++;
-                        process.SessionTime++;
-                    }
+                    process.ProcessTotalTime++;
+                    process.SessionTime++;
                 }
             }
             Tick?.Invoke();

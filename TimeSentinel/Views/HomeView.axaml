@@ -69,8 +69,8 @@
                     <TextBlock Text="{Binding DisplayStatus}"  FontSize="16" HorizontalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="PLACEHOLDER" FontSize="16"/>
-                    <TextBlock Text="PLACEHOLDER" FontSize="16" HorizontalAlignment="Center"/>
+                    <TextBlock Text="LAST_SESSION:" FontSize="16"/>
+                    <TextBlock Text="{Binding DisplayLastSession}" FontSize="16" HorizontalAlignment="Center"/>
                 </StackPanel>
             </Grid>
 

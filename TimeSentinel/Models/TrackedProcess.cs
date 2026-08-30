@@ -21,5 +21,10 @@ public partial class TrackedProcess : ObservableObject
     private int _sessionTime = 0;
     [ObservableProperty]
     private bool _isCurrentlyRunning;
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(LastRunDisplay))]
+    private DateTime? _lastRunTime;
+
+    public string LastRunDisplay => LastRunTime?.ToString("dd/MM/yyyy HH:mm") ?? "NEVER";
     public string FormattedTime => TimeSpan.FromSeconds(ProcessTotalTime).ToString(@"hh\:mm\:ss");
 }

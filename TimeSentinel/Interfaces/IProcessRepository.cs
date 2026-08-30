@@ -13,6 +13,7 @@ namespace TimeSentinel.Interfaces
         void RemoveProcess(int processId);
         IEnumerable<TrackedProcess> GetAll();
         void UpdateProcessTime(string processName, int newTotalTime, bool isActive);
+        void UpdateLastRunTime(string processName, DateTime? lastRunTime);
         TrackedProcess GetProcessByName(string name);
     }
 }

@@ -44,32 +44,39 @@ public partial class SettingsViewModel : ViewModelBase
     {
         var newProcess = new TrackedProcess
         {
-            ProcessName = ProcessNameToAdd
+            ProcessName = ProcessNameToAdd!
         };
-        RegisteredProcesses.Add(newProcess);
         _processRepository.AddProcess(newProcess);
-        LoadProcesses();
+        var processWithId = _processRepository.GetProcessByName(newProcess.ProcessName);
+
+        if (processWithId != null)
+        {
+            RegisteredProcesses.Add(processWithId);
+        }
+
         ClearAddText();
     }
+
     [RelayCommand(CanExecute = nameof(CanRemove))]
     private void RemoveProcess()
     {
+        TrackedProcess? target = null;
+
         if (SelectedProcess != null)
         {
-            _processRepository.RemoveProcess(SelectedProcess.ProcessId);
-            RegisteredProcesses.Remove(SelectedProcess);
-            SelectedProcess = null;
+            target = SelectedProcess;
         }
         else if (!string.IsNullOrWhiteSpace(ProcessNameToRemove))
         {
-            var target = RegisteredProcesses.FirstOrDefault(p =>
-                p.ProcessName.Equals(ProcessNameToRemove));
+            target = RegisteredProcesses.FirstOrDefault(p =>
+                p.ProcessName.Equals(ProcessNameToRemove, StringComparison.OrdinalIgnoreCase));
+        }
 
-            if (target != null)
-            {
-                _processRepository.RemoveProcess(target.ProcessId);
-                RegisteredProcesses.Remove(target);
-            }
+        if (target != null)
+        {
+            _processRepository.RemoveProcess(target.ProcessId);
+            RegisteredProcesses.Remove(target);
+            SelectedProcess = null;
         }
         ClearRemoveText();
     }
