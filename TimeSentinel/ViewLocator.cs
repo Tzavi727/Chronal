@@ -2,9 +2,9 @@
 using System.Diagnostics.CodeAnalysis;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using TimeSentinel.ViewModels;
+using Chronal.ViewModels;
 
-namespace TimeSentinel;
+namespace Chronal;
 
 /// <summary>
 /// Given a view model, returns the corresponding view if possible.

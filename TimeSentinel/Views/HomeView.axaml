@@ -2,12 +2,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:viewmodels="using:TimeSentinel.ViewModels"
+             xmlns:viewmodels="using:Chronal.ViewModels"
              mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="450"
 			 Width="500"
 			 Height="450"
              Background="{DynamicResource WindowBgBrush}"
-             x:Class="TimeSentinel.Views.HomeView"
+             x:Class="Chronal.Views.HomeView"
              x:DataType="viewmodels:HomeViewModel">
 
     <Grid Margin="15">

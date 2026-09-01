@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace TimeSentinel.Views
+namespace Chronal.Views
 {
     public partial class SettingsView : UserControl
     {

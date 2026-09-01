@@ -1,9 +1,9 @@
 ﻿using System.Collections.ObjectModel;
-using TimeSentinel.Interfaces;
-using TimeSentinel.Models;
-using TimeSentinel.Services;
+using Chronal.Interfaces;
+using Chronal.Models;
+using Chronal.Services;
 
-namespace TimeSentinel.ViewModels;
+namespace Chronal.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {

@@ -1,7 +1,7 @@
 ﻿using Avalonia.Controls;
-using TimeSentinel.ViewModels;
+using Chronal.ViewModels;
 
-namespace TimeSentinel.Views;
+namespace Chronal.Views;
 
 public partial class MainWindow : Window
 {

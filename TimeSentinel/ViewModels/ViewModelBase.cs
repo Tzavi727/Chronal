@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace TimeSentinel.ViewModels;
+namespace Chronal.ViewModels;
 
 public abstract class ViewModelBase : ObservableObject
 {

@@ -1,7 +1,7 @@
 ﻿using Dapper;
 using Microsoft.Data.Sqlite;
 
-namespace TimeSentinel.Data
+namespace Chronal.Data
 {
     internal class DataBaseBootstrap
     {

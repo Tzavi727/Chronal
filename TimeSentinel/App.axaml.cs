@@ -3,13 +3,13 @@ using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using System;
-using TimeSentinel.Data;
-using TimeSentinel.Repositories;
-using TimeSentinel.Services;
-using TimeSentinel.ViewModels;
-using TimeSentinel.Views;
+using Chronal.Data;
+using Chronal.Repositories;
+using Chronal.Services;
+using Chronal.ViewModels;
+using Chronal.Views;
 
-namespace TimeSentinel;
+namespace Chronal;
 
 public partial class App : Application
 {

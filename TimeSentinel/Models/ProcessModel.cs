@@ -1,4 +1,4 @@
-﻿namespace TimeSentinel.Models
+﻿namespace Chronal.Models
 {
     public record ProcessRecord
     {

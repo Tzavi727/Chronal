@@ -1,10 +1,10 @@
 ﻿using Avalonia.Threading;
 using System;
 using System.Collections.ObjectModel;
-using TimeSentinel.Interfaces;
-using TimeSentinel.Models;
+using Chronal.Interfaces;
+using Chronal.Models;
 
-namespace TimeSentinel.Services
+namespace Chronal.Services
 {
     public class CounterService
     {

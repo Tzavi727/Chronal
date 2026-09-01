@@ -1,13 +1,13 @@
 ﻿<Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="TimeSentinel.App"
-             xmlns:local="using:TimeSentinel"
+             x:Class="Chronal.App"
+             xmlns:local="using:Chronal"
              RequestedThemeVariant="Light">
     <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
     <TrayIcon.Icons>
         <TrayIcons>
             <TrayIcon Icon="/Assets/Gold_Watch.ico"
-                      ToolTipText="TimeSentinel: Watching Processes"
+                      ToolTipText="Chronal: Watching Processes"
                       Clicked="TrayIcon_OnClicked">
             </TrayIcon>
         </TrayIcons>
@@ -18,13 +18,13 @@
 
     <Application.Styles>
         <SimpleTheme />
-        <StyleInclude Source="avares://TimeSentinel/Theme/GlobalStyles.axaml"/>
+        <StyleInclude Source="avares://Chronal/Theme/GlobalStyles.axaml"/>
     </Application.Styles>
 
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceInclude Source="avares://TimeSentinel/Theme/ChargedOG.axaml"/>
+                <ResourceInclude Source="avares://Chronal/Theme/ChargedOG.axaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -2,10 +2,10 @@
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
-using TimeSentinel.Interfaces;
-using TimeSentinel.Models;
+using Chronal.Interfaces;
+using Chronal.Models;
 
-namespace TimeSentinel.Repositories
+namespace Chronal.Repositories
 {
     internal class ProcessRepository : IProcessRepository
     {

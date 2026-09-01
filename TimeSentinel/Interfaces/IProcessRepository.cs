@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using TimeSentinel.Models;
+using Chronal.Models;
 
-namespace TimeSentinel.Interfaces
+namespace Chronal.Interfaces
 {
     public interface IProcessRepository
     {

@@ -3,10 +3,10 @@ using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using TimeSentinel.Interfaces;
-using TimeSentinel.Models;
+using Chronal.Interfaces;
+using Chronal.Models;
 
-namespace TimeSentinel.ViewModels;
+namespace Chronal.ViewModels;
 
 public partial class SettingsViewModel : ViewModelBase
 {

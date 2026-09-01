@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace TimeSentinel;
+namespace Chronal;
 
 sealed class Program
 {

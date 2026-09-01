@@ -1,4 +1,4 @@
-﻿namespace TimeSentinel.Interfaces
+﻿namespace Chronal.Interfaces
 {
     public interface IProcessService
     {

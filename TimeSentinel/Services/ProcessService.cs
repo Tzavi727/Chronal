@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using System.Linq;
-using TimeSentinel.Interfaces;
+using Chronal.Interfaces;
 
-namespace TimeSentinel.Services
+namespace Chronal.Services
 {
     internal class ProcessService : IProcessService
     {

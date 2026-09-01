@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 
-namespace TimeSentinel.Models;
+namespace Chronal.Models;
 
 public partial class TrackedProcess : ObservableObject
 {
