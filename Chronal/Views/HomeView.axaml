@@ -57,24 +57,42 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="LIFETIME_UPTIME:" FontSize="16"/>
-                    <TextBlock Text="{Binding DisplayLifeTime}" FontSize="16" HorizontalAlignment="Center" />
+                    <TextBlock Text="LIFETIME_UPTIME:" 
+                               FontSize="16"
+                               TextAlignment="Center"/>
+                    <TextBlock Text="{Binding DisplayLifeTime}" 
+                               FontSize="16" 
+                               HorizontalAlignment="Center"
+                               TextAlignment="Center"/>
                 </StackPanel>
                 <StackPanel Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="CURRENT_SESSION:" FontSize="16"/>
-                    <TextBlock Text="{Binding DisplaySession}" FontSize="16" HorizontalAlignment="Center"/>
+                    <TextBlock Text="CURRENT_SESSION:" 
+                               FontSize="16"
+                               TextAlignment="Center"/>
+                    <TextBlock Text="{Binding DisplaySession}" 
+                               FontSize="16" 
+                               HorizontalAlignment="Center"
+                               TextAlignment="Center"/>
                 </StackPanel>
-                <StackPanel Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="PROCESS_STATUS:" FontSize="16"/>
-                    <TextBlock Text="{Binding DisplayStatus}"  FontSize="16" HorizontalAlignment="Center"/>
+                <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="PROCESS_STATUS:" 
+                               FontSize="16"
+                               TextAlignment="Center"/>
+                    <TextBlock Text="{Binding DisplayStatus}" 
+                               FontSize="16" 
+                               HorizontalAlignment="Center"
+                               TextAlignment="Center"/>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="LAST_SESSION:" FontSize="16"/>
-                    <TextBlock Text="{Binding DisplayLastSession}" FontSize="16" HorizontalAlignment="Center"/>
+                    <TextBlock Text="LAST_SESSION:" 
+                               FontSize="16" 
+                               TextAlignment="Center"/>
+                    <TextBlock Text="{Binding DisplayLastSession}" 
+                               FontSize="16" 
+                               HorizontalAlignment="Center" 
+                               TextAlignment="Center"/>
                 </StackPanel>
             </Grid>
-
-
 
         </Border>
         <TextBlock Grid.Row="1"
