@@ -2,6 +2,31 @@
 
 Chronal is a program that tracks your time inside any process, just like Steam does with games, but for anything!
 
+<p align="center">
+  <table align="center">
+    <tr>
+      <td align="center">
+        <img src="Assets/SystemIdle.jpg" width="400px" /><br />
+        <sub><b>[ System Idle ]</b></sub>
+      </td>
+      <td align="center">
+        <img src="Assets/DashboardActive.jpg" width="400px" /><br />
+        <sub><b>[ Dashboard Active ]</b></sub>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="Assets/SelectorSwitch.jpg" width="400px" /><br />
+        <sub><b>[ Selector Switch ]</b></sub>
+      </td>
+      <td align="center">
+        <img src="Assets/DbManagement.jpg" width="400px" /><br />
+        <sub><b>[ DB Management ]</b></sub>
+      </td>
+    </tr>
+  </table>
+</p>
+
 ---
 
 ## Features
