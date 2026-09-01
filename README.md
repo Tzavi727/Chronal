@@ -6,21 +6,21 @@ Chronal is a program that tracks your time inside any process, just like Steam d
   <table align="center">
     <tr>
       <td align="center">
-        <sub><b>[ SYSTEM_IDLE ]</b></sub><br />
+        <b>[ SYSTEM_IDLE ]</b><br /><br />
         <img src="Chronal/Assets/SystemIdle.jpg" width="400px" />
       </td>
       <td align="center">
-        <sub><b>[ DASHBOARD_ACTIVE ]</b></sub><br />
+        <b>[ DASHBOARD_ACTIVE ]</b><br /><br />
         <img src="Chronal/Assets/DashboardActive.jpg" width="400px" />
       </td>
     </tr>
     <tr>
       <td align="center">
-        <sub><b>[ SELECTOR_SWITCH ]</b></sub><br />
+        <b>[ SELECTOR_SWITCH ]</b><br /><br />
         <img src="Chronal/Assets/SelectorSwitch.jpg" width="400px" />
       </td>
       <td align="center">
-        <sub><b>[ DB_MANAGEMENT ]</b></sub><br />
+        <b>[ DB_MANAGEMENT ]</b><br /><br />
         <img src="Chronal/Assets/DbManagement.jpg" width="400px" />
       </td>
     </tr>
