@@ -33,7 +33,7 @@ public partial class SettingsViewModel : ViewModelBase
     [ObservableProperty]
     ObservableCollection<TrackedProcess> _registeredProcesses = new();
     public bool HasProcessNameToAdd => !string.IsNullOrWhiteSpace(ProcessNameToAdd);
-    public bool HasProcessNameToRemove => !string.IsNullOrWhiteSpace(ProcessNameToAdd);
+    public bool HasProcessNameToRemove => !string.IsNullOrWhiteSpace(ProcessNameToRemove);
     private bool CanAdd => !string.IsNullOrWhiteSpace(ProcessNameToAdd);
     private bool CanRemove => SelectedProcess != null || !string.IsNullOrWhiteSpace(ProcessNameToRemove);
 
